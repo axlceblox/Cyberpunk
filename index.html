@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeonLua Forge | Roblox Lua Obfuscator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <main class="layout">
+      <section class="hero card">
+        <p class="badge">Cyberpunk Toolkit</p>
+        <h1>NeonLua Forge</h1>
+        <p>
+          Turn your Roblox Lua scripts into layered encoded payloads with one click.
+          Built for creators who want style, speed, and a dramatic neon interface.
+        </p>
+      </section>
+
+      <section class="editor card">
+        <div class="section-head">
+          <h2>Input Lua Script</h2>
+          <button id="sampleBtn" class="ghost">Load Sample</button>
+        </div>
+        <textarea id="source" spellcheck="false" placeholder="Paste your Roblox Lua script here..."></textarea>
+        <div class="controls">
+          <label>
+            Obfuscation layers
+            <input id="layers" type="range" min="1" max="4" value="2" />
+            <span id="layerValue">2</span>
+          </label>
+          <button id="obfuscateBtn">Obfuscate Script</button>
+        </div>
+      </section>
+
+      <section class="output card">
+        <div class="section-head">
+          <h2>Obfuscated Output</h2>
+          <button id="copyBtn" class="ghost">Copy</button>
+        </div>
+        <textarea id="result" spellcheck="false" readonly placeholder="Obfuscated script will appear here..."></textarea>
+      </section>
+
+      <section class="meta card">
+        <h3>How it works</h3>
+        <ul>
+          <li>Encodes script bytes into escaped sequences.</li>
+          <li>Adds randomized wrapper variables + decoy arithmetic.</li>
+          <li>Supports multi-pass wrapping for extra complexity.</li>
+        </ul>
+        <p class="note">
+          Use responsibly. Obfuscation protects structure, not intent.
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
