@@ -24,7 +24,7 @@ function encodeLayer(luaCode) {
   const junkA = Math.floor(Math.random() * 90 + 10);
   const junkB = Math.floor(Math.random() * 90 + 10);
 
-  return `local ${tableName}={${bytes.join(',')}}\nlocal ${accumulator}=""\nfor _,v in ipairs(${tableName}) do ${accumulator}=${accumulator}..string.char(v) end\nlocal _j=${junkA}+${junkB}-${junkB}\nif _j~=${junkA} then return end\nloadstring(${accumulator})()`;
+  return `local ${tableName}={${bytes.join(',')}}\nlocal ${accumulator}=""\nfor _,v in ipairs(${tableName}) do ${accumulator}=${accumulator}..string.char(v) end\nlocal _j=${junkA}+${junkB}-${junkB}\nif _j~=${junkA} then return end\nlocal _loader=loadstring or load\nif not _loader then error("Dynamic code loading is unavailable in this environment") end\nlocal _fn,_err=_loader(${accumulator})\nif not _fn then error(_err) end\n_fn()`;
 }
 
 function multiObfuscate(luaCode, layers) {
