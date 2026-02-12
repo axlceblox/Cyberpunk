@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyberpunk Obfuscator Studio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <main class="app-shell">
+    <header class="hero">
+      <p class="badge">HARDENING SUITE</p>
+      <h1>Cyberpunk Obfuscator Studio</h1>
+      <p class="subtitle">Stronger obfuscation, runtime protection, and a sharper UI in one workflow.</p>
+    </header>
+
+    <section class="panel controls">
+      <h2>Input</h2>
+      <label for="source">JavaScript source code</label>
+      <textarea id="source" spellcheck="false" placeholder="Paste your JavaScript here..."></textarea>
+
+      <div class="options-grid">
+        <label><input id="optString" type="checkbox" checked /> String encoding</label>
+        <label><input id="optRename" type="checkbox" checked /> Identifier scrambling</label>
+        <label><input id="optFlow" type="checkbox" checked /> Control-flow flattening (light)</label>
+        <label><input id="optRuntime" type="checkbox" checked /> Runtime protection</label>
+      </div>
+
+      <button id="obfuscateBtn">Obfuscate + Protect</button>
+    </section>
+
+    <section class="panel output">
+      <div class="output-head">
+        <h2>Output</h2>
+        <button id="copyBtn" class="secondary">Copy</button>
+      </div>
+      <label for="result">Protected code</label>
+      <textarea id="result" spellcheck="false" readonly placeholder="Your protected output appears here..."></textarea>
+      <p id="status" class="status">Ready.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
