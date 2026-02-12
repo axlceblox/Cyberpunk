@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyberpunk Obfuscator Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <p class="eyebrow">Hardening Suite</p>
+        <h1>Cyberpunk Obfuscator Studio</h1>
+        <p class="subtitle">
+          Roblox Lua obfuscation with a cleaner, mobile-friendly interface.
+        </p>
+      </header>
+
+      <section class="card">
+        <h2>Input</h2>
+        <label for="source" class="label">Roblox Lua source code</label>
+        <textarea
+          id="source"
+          rows="12"
+          placeholder="Paste your Roblox Lua script here..."
+          spellcheck="false"
+        ></textarea>
+
+        <div class="options" role="group" aria-label="Obfuscation options">
+          <label><input type="checkbox" id="removeComments" checked /> Remove comments</label>
+          <label><input type="checkbox" id="compressWhitespace" checked /> Compress whitespace</label>
+          <label><input type="checkbox" id="encodeStrings" checked /> Encode strings</label>
+          <label><input type="checkbox" id="renameLocals" checked /> Rename local variables</label>
+        </div>
+
+        <div class="actions">
+          <button id="obfuscateBtn" type="button" class="btn btn-primary">Obfuscate Lua</button>
+          <button id="clearBtn" type="button" class="btn btn-muted">Clear</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="output-header">
+          <h2>Output</h2>
+          <button id="copyBtn" type="button" class="btn btn-muted">Copy</button>
+        </div>
+
+        <label for="output" class="label">Obfuscated Roblox Lua</label>
+        <textarea id="output" rows="12" readonly placeholder="Your obfuscated script will appear here..."></textarea>
+        <p id="status" class="status" aria-live="polite">Ready.</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
